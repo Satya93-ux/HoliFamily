@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover our history, mission, vision, and core values. Holy Family School Chapra provides safe, inclusive, and modern schooling near Mehiya Overbridge.">
+  <title>About Us | Holy Family School, Chapra</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              dark: '#0A1128',
+              deep: '#101F42',
+              mid: '#1C3166',
+              light: '#28468F'
+            },
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#E5C453',
+              dark: '#AA8822'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom Style Sheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FAF9F6] text-gray-800 flex flex-col min-h-screen">
+
+  <!-- Pride Accent Strip at the very top -->
+  <div class="pride-strip"></div>
+
+  <!-- Announcement Banner -->
+  <div class="bg-navy-dark text-white py-2.5 overflow-hidden border-b border-gold/20 text-sm font-medium">
+    <div class="max-w-7xl mx-auto px-4 flex items-center">
+      <span class="bg-gold text-navy-dark text-xs px-2.5 py-1 rounded font-bold uppercase tracking-wider mr-4 shadow-sm flex-shrink-0 animate-pulse">
+        LATEST UPDATES
+      </span>
+      <div class="marquee-container overflow-hidden w-full relative h-5">
+        <div class="marquee-content absolute flex space-x-12">
+          <span>✨ Admissions Open for the current academic year! Apply today.</span>
+          <span>🏫 School Timings: Morning Shift in operation, closing daily at 2:00 PM.</span>
+          <span>🎓 Proud Recognized 12th Board Exam Centre serving the Chapra region.</span>
+          <span>🌈 Providing an inclusive, safe, welcoming, and LGBTQ+ friendly learning environment for all!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Glassmorphism Navigation -->
+  <header class="sticky top-0 z-50 glass-nav shadow-lg transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo and School Name -->
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <div class="w-12 h-12 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center shadow-md border border-gold/30 transition-transform group-hover:scale-105">
+            <!-- Custom Crest SVG -->
+            <svg class="w-7 h-7 text-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="block text-lg sm:text-xl font-bold text-white tracking-wide uppercase leading-tight group-hover:text-gold transition-colors">
+              Holy Family School
+            </span>
+            <span class="block text-xs text-gold/80 font-medium tracking-widest leading-none Hindi-font">
+              होली FAMILY स्कूल, छपरा
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wider text-white">
+          <a href="index.html" class="hover-underline-gold hover:text-gold transition-colors pb-1 px-1">HOME</a>
+          <a href="about.html" class="text-gold border-b-2 border-gold pb-1 px-1">ABOUT US</a>
+          <a href="academics.html" class="hover-underline-gold hover:text-gold transition-colors pb-1 px-1">ACADEMICS</a>
+          <a href="admissions.html" class="hover-underline-gold hover:text-gold transition-colors pb-1 px-1">ADMISSIONS</a>
+          <a href="contact.html" class="hover-underline-gold hover:text-gold transition-colors pb-1 px-1">CONTACT</a>
+          <a href="admissions.html" class="bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-dark px-5 py-2.5 rounded-full font-bold shadow-md hover:shadow-gold/20 transition-all duration-300 scale-95 hover:scale-100 uppercase tracking-widest">
+            Apply Now
+          </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white hover:text-gold focus:outline-none transition-colors p-2" aria-label="Toggle menu">
+          <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-drawer" class="hidden md:hidden bg-navy-deep border-t border-gold/10 px-4 pt-4 pb-6 space-y-3 transition-all duration-300">
+      <a href="index.html" class="block text-white hover:text-gold font-semibold py-2 border-b border-navy-mid/30 transition-colors">HOME</a>
+      <a href="about.html" class="block text-gold font-bold py-2 border-b border-navy-mid/30">ABOUT US</a>
+      <a href="academics.html" class="block text-white hover:text-gold font-semibold py-2 border-b border-navy-mid/30 transition-colors">ACADEMICS</a>
+      <a href="admissions.html" class="block text-white hover:text-gold font-semibold py-2 border-b border-navy-mid/30 transition-colors">ADMISSIONS</a>
+      <a href="contact.html" class="block text-white hover:text-gold font-semibold py-2 transition-colors">CONTACT</a>
+      <a href="admissions.html" class="block text-center bg-gradient-to-r from-gold to-gold-dark text-navy-dark py-3 rounded-xl font-bold shadow-md uppercase tracking-wider">
+        APPLY NOW
+      </a>
+    </div>
+  </header>
+
+  <!-- Page Header Title Banner -->
+  <section class="bg-gradient-to-r from-navy-dark via-navy-deep to-navy-mid text-white py-16 sm:py-24 relative overflow-hidden border-b border-gold/20 text-center">
+    <div class="absolute inset-0 opacity-10 grid-pattern"></div>
+    <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-4 page-fade-in">
+      <span class="text-gold font-bold uppercase tracking-widest text-xs">WHO WE ARE</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight">Our Identity & Values</h1>
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed">
+        Building a welcoming, academically brilliant, and physically safe home for the youth of Chapra.
+      </p>
+    </div>
+  </section>
+
+  <!-- History & Foundations Section -->
+  <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <!-- Image Column -->
+      <div class="relative order-last lg:order-first">
+        <div class="absolute -inset-3 bg-gradient-to-br from-gold/30 to-transparent blur-md -z-10 rounded-2xl"></div>
+        <div class="overflow-hidden rounded-2xl border-4 border-white shadow-2xl">
+          <img src="assets/school_hero.png" alt="Holy Family School" class="w-full h-auto object-cover">
+        </div>
+        <!-- Estd Banner -->
+        <div class="absolute -bottom-6 -right-6 bg-navy-dark border border-gold/40 text-white px-6 py-4 rounded-2xl shadow-xl text-center">
+          <span class="block text-xs uppercase tracking-widest text-slate-400">Founded in</span>
+          <span class="block text-2xl font-bold text-gold mt-1">2012</span>
+        </div>
+      </div>
+
+      <!-- Text Column -->
+      <div class="space-y-6">
+        <span class="text-gold font-bold uppercase tracking-widest text-xs">ESTABLISHED ROOTS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-dark leading-tight">
+          Nurturing Chapra’s Future for Over a Decade
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          Founded in <strong>2012</strong>, Holy Family School (होली फैमिली स्कूल) began with a clear and singular vision: to bring top-tier, structured general education to Chapra, Bihar. Over the years, we have grown into a cornerstone institution, serving students up to the 12th Grade and securing our stature as a prominent <strong>Recognized 12th Board Exam Centre</strong>.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          We pride ourselves on offering a thorough education curriculum designed to prepare boys and girls for state, domestic, and international testing boards, while keeping schedules convenient with our focused morning shift model.
+        </p>
+        
+        <!-- Location badge inside list -->
+        <div class="flex items-start space-x-3 p-4 bg-navy-deep/5 rounded-xl border-l-4 border-gold">
+          <span class="text-xl">📍</span>
+          <div>
+            <p class="text-sm font-bold text-navy-dark">Strategic Geographic Spot</p>
+            <p class="text-xs text-gray-500 mt-1 leading-relaxed">
+              Located right near the <strong>Gurukul Mehiya Overbridge</strong> in Gurukul Mehiya, Chapra (Bihar). This central address provides easy, direct transport connectivity for parents from both local and neighboring sectors.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision Cards -->
+  <section class="py-16 bg-navy-deep text-white border-t border-b border-gold/20 relative">
+    <div class="absolute inset-0 opacity-5 grid-pattern"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Mission -->
+        <div class="bg-navy-dark border border-gold/20 p-8 rounded-3xl space-y-4 hover:border-gold/50 transition-colors duration-300">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+            <!-- Compass SVG -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Our Mission</h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            To provide high-quality general academic training while actively fostering a vibrant, welcoming environment where students can freely develop critical analysis, creativity, physical coordination, and deep community ethics.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-navy-dark border border-gold/20 p-8 rounded-3xl space-y-4 hover:border-gold/50 transition-colors duration-300">
+          <div class="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center text-gold">
+            <!-- Lightbulb SVG -->
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-white">Our Vision</h3>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            To become a leading regional standard-bearer for inclusive education. We visualize our school as a space where high board performance goes hand-in-hand with absolute safety, deep respect, and social progression.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fully Inclusive & LGBTQ+ Friendly Deep-Dive Section -->
+  <section class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="bg-white rounded-3xl border border-gold/15 shadow-xl overflow-hidden">
+      <!-- Top visual row showing our pride values -->
+      <div class="bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-600 h-2 w-full"></div>
+      
+      <div class="p-8 sm:p-12 lg:p-16 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="inline-flex items-center space-x-2 bg-rose-50 border border-rose-200 text-rose-600 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wider">
+            🌈 Proudly LGBTQ+ Welcoming
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-dark tracking-tight">
+            An Education System That Celebrates You
+          </h2>
+          <p class="text-gray-600 leading-relaxed font-light text-base sm:text-lg">
+            At Holy Family School, we stand firm in our belief that every single student deserves a secure, loving, and discrimination-free space to achieve their true potential. We are dedicated to providing a fully supportive, welcoming, and LGBTQ+ friendly education environment in Chapra.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Through mutual understanding, inclusive curriculums, specialized anti-discrimination policies, and proactive support pathways, we prepare our students to become compassionate, empathetic leaders who honor diversity in their hometowns and across the globe.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="flex items-center space-x-2.5 text-sm font-semibold text-gray-700">
+              <span class="text-emerald-500">✓</span>
+              <span>Diverse Staff Representation</span>
+            </div>
+            <div class="flex items-center space-x-2.5 text-sm font-semibold text-gray-700">
+              <span class="text-emerald-500">✓</span>
+              <span>Proactive Peer Guidance Group</span>
+            </div>
+            <div class="flex items-center space-x-2.5 text-sm font-semibold text-gray-700">
+              <span class="text-emerald-500">✓</span>
+              <span>Zero-Tolerance Bullying Code</span>
+            </div>
+            <div class="flex items-center space-x-2.5 text-sm font-semibold text-gray-700">
+              <span class="text-emerald-500">✓</span>
+              <span>Safe-Dialogue Counseling Office</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Callout box right side -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-navy-dark to-navy-deep text-white p-8 rounded-2xl border border-gold/30 relative shadow-2xl">
+          <div class="absolute -top-3 -left-3 bg-gold text-navy-dark font-extrabold text-[10px] px-3 py-1 rounded shadow-md uppercase tracking-wider">
+            Our Promise
+          </div>
+          <p class="italic text-slate-300 leading-relaxed text-sm sm:text-base">
+            "No child should ever have to mask who they are to get an education. We guarantee that your identity is validated, cherished, and protected inside Holy Family's boundary lines."
+          </p>
+          <div class="mt-6 pt-4 border-t border-slate-700 flex items-center space-x-3">
+            <div class="w-9 h-9 bg-gold/20 rounded-full flex items-center justify-center text-gold text-xs font-bold">🌈</div>
+            <div>
+              <p class="text-xs font-bold text-white">Board of Education</p>
+              <p class="text-[10px] text-slate-400 uppercase tracking-widest mt-0.5">Holy Family School</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Map Banner Link -->
+  <section class="bg-gradient-to-b from-[#FAF9F6] to-[#FFFDF9] py-16 border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <span class="text-gold font-bold uppercase tracking-widest text-xs">VISIT US</span>
+      <h2 class="text-3xl font-extrabold text-navy-dark">Located at Gurukul Mehiya, Chapra</h2>
+      <p class="text-gray-600 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+        Our campus is strategically set near the <strong>Gurukul Mehiya Overbridge</strong>, providing ease of drop-off and pickup during morning hours. Visit our campus to experience our safe classrooms.
+      </p>
+      <div>
+        <a href="contact.html" class="inline-flex items-center space-x-2 bg-navy-dark text-white px-6 py-3.5 rounded-xl font-bold hover:bg-gold hover:text-navy-dark transition-colors duration-300 shadow-md">
+          <span>Get Campus Directions</span>
+          <span>📍</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Contact Section -->
+  <footer class="bg-navy-dark text-white border-t border-gold/30 pt-16 pb-8 relative mt-auto">
+    <div class="absolute inset-0 opacity-5 grid-pattern"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+        <!-- Col 1: Identity -->
+        <div class="space-y-4">
+          <a href="index.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-gold to-gold-dark rounded-full flex items-center justify-center">
+              <svg class="w-6 h-6 text-navy-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="block text-base font-extrabold uppercase text-gold leading-none">Holy Family School</span>
+              <span class="block text-[10px] text-slate-400 mt-1">होली फैमिली स्कूल, छपरा</span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Leading regional school in Chapra providing outstanding modern primary and secondary standard education, board center support, and fully inclusive atmospheres.
+          </p>
+          <div class="pt-2 flex items-center space-x-2.5">
+            <span class="text-xs bg-navy-mid px-2.5 py-1 rounded text-gold font-bold">ESTD. 2012</span>
+            <span class="text-xs bg-navy-mid px-2.5 py-1 rounded text-emerald-400 font-bold">12th Board Centre</span>
+          </div>
+        </div>
+
+        <!-- Col 2: Core Address -->
+        <div class="space-y-4">
+          <h4 class="text-sm font-extrabold text-gold uppercase tracking-wider">School Location</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start space-x-2">
+              <span class="text-gold text-base mt-0.5">📍</span>
+              <span>
+                Near Mehiya Overbridge,<br>
+                Gurukul Mehiya,<br>
+                Chapra, Bihar - 841302, India
+              </span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-gold text-base">⏱</span>
+              <span>Monday - Saturday: Closes at 2:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Direct Connect -->
+        <div class="space-y-4">
+          <h4 class="text-sm font-extrabold text-gold uppercase tracking-wider">Direct Connect</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-center space-x-2">
+              <span class="text-gold text-base">📞</span>
+              <a href="tel:+918294047168" class="hover:text-gold font-bold transition-colors text-sm text-white">
+                +91 82940 47168
+              </a>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-gold text-base">✉️</span>
+              <a href="mailto:info@hfschoolcpr.com" class="hover:text-gold transition-colors">
+                info@hfschoolcpr.com
+              </a>
+            </li>
+            <li class="flex items-center space-x-2">
+              <span class="text-gold text-base">🌐</span>
+              <a href="https://hfschoolcpr.com" target="_blank" class="hover:text-gold transition-colors font-semibold">
+                hfschoolcpr.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Quick Links -->
+        <div class="space-y-4">
+          <h4 class="text-sm font-extrabold text-gold uppercase tracking-wider">Quick Navigation</h4>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <a href="index.html" class="text-slate-300 hover:text-gold transition-colors">→ Home</a>
+            <a href="about.html" class="text-slate-300 hover:text-gold transition-colors">→ About Us</a>
+            <a href="academics.html" class="text-slate-300 hover:text-gold transition-colors">→ Academics</a>
+            <a href="admissions.html" class="text-slate-300 hover:text-gold transition-colors">→ Admissions</a>
+            <a href="contact.html" class="text-slate-300 hover:text-gold transition-colors">→ Contact Us</a>
+            <a href="admissions.html" class="text-slate-300 hover:text-gold transition-colors font-bold">→ Register Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider line -->
+      <div class="border-t border-slate-800/80 my-8"></div>
+
+      <!-- Bottom Bar -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+        <p>© 2026 Holy Family School (होली फैमिली स्कूल), Chapra. All rights reserved.</p>
+        <p class="flex items-center gap-1.5">
+          <span>Proudly Inclusive & LGBTQ+ Friendly</span>
+          <span class="w-3 h-1.5 bg-gradient-to-r from-red-500 via-yellow-400 to-purple-600 rounded"></span>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const menuIcon = document.getElementById('menu-icon');
+
+    mobileBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('hidden');
+      if (mobileDrawer.classList.contains('hidden')) {
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+  </script>
+</body>
+</html>
